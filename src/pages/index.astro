@@ -15,7 +15,13 @@ import Cat from "../components/cat.astro";
 		<title>Astro</title>
 	</head>
 	<body>
-		<Dog />
+		<Dog server:defer>
+			<div slot="fallback">
+				<span style="color: green; font-size: 2.5rem;"
+					>🐶 Loading dog fat...</span
+				>
+			</div>
+		</Dog>
 		<Cat server:defer>
 			<div slot="fallback">
 				<span style="color: green; font-size: 2.5rem;"
